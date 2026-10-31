@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    "description": "A Government of India income-support scheme for eligible landholding farmer families. Eligibility and exclusions must be checked against the current official guidelines.",
+    "category": "Agriculture",
+    "official_url": "https://pmkisan.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Mudra Yojana (PMMY)",
+    "description": "A government-supported lending initiative intended to improve access to institutional credit for eligible micro-enterprises and business activities. Loan conditions depend on the applicable scheme and lender guidelines.",
+    "category": "Business",
+    "official_url": "https://www.mudra.org.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+    "description": "A Government of India initiative supporting LPG connections for eligible households. Current beneficiary criteria and required documents must be confirmed through the official scheme information.",
+    "category": "Household Welfare",
+    "official_url": "https://www.pmuy.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "National Scholarship Portal (NSP)",
+    "description": "The National Scholarship Portal provides a platform for students to discover and apply for participating government scholarship schemes. Eligibility, income limits, academic requirements and deadlines depend on the individual scholarship.",
+    "category": "Education",
+    "official_url": "https://scholarships.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)",
+    "description": "A Government of India health assurance scheme providing eligible beneficiaries access to covered hospital treatment. Eligibility and benefits must be verified using the official beneficiary and scheme information.",
+    "category": "Healthcare",
+    "official_url": "https://pmjay.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Atal Pension Yojana (APY)",
+    "description": "A contributory pension scheme for eligible subscribers, with pension benefits subject to applicable conditions.",
+    "category": "Social Security",
+    "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "description": "Crop insurance support for eligible farmers against specified crop losses, subject to policy and seasonal conditions.",
+    "category": "Agriculture",
+    "official_url": "https://pmfby.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Kisan Maan Dhan Yojana (PM-KMY)",
+    "description": "A contributory pension scheme for eligible small and marginal farmers, subject to enrollment requirements.",
+    "category": "Agriculture",
+    "official_url": "https://www.myscheme.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Soil Health Card Scheme",
+    "description": "Provides soil testing information and nutrient recommendations to support informed farming decisions.",
+    "category": "Agriculture",
+    "official_url": "https://soilhealth.dac.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Agriculture Infrastructure Fund (AIF)",
+    "description": "Supports eligible investments in agriculture infrastructure through financing assistance under applicable guidelines.",
+    "category": "Agriculture",
+    "official_url": "https://agriinfra.dac.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "PM Vishwakarma",
+    "description": "Provides eligible traditional artisans and craftspeople access to training, toolkit support, credit and market-linkage assistance.",
+    "category": "Business",
+    "official_url": "https://pmvishwakarma.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "PM SVANidhi",
+    "description": "A lending initiative supporting eligible street vendors with working-capital credit and related incentives.",
+    "category": "Business",
+    "official_url": "https://pmsvanidhi.mohua.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Prime Minister's Employment Generation Programme (PMEGP)",
+    "description": "Supports eligible entrepreneurs establishing new micro-enterprises through credit-linked assistance.",
+    "category": "Business",
+    "official_url": "https://www.msme.gov.in/offerings/schemes-and-services/details/prime-minister-employment-generation-programme-and-other-credit-support-schemes-1-MDMzETMtQWa",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Awas Yojana - Gramin (PMAY-G)",
+    "description": "Provides housing assistance to eligible rural households under applicable programme guidelines.",
+    "category": "Housing",
+    "official_url": "https://pmayg.dord.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+    "description": "Supports eligible urban households in accessing affordable housing assistance under current programme rules.",
+    "category": "Housing",
+    "official_url": "https://pmay-urban.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "PM Surya Ghar: Muft Bijli Yojana",
+    "description": "Supports eligible residential rooftop solar installations under applicable subsidy and application conditions.",
+    "category": "Energy",
+    "official_url": "https://pmsuryaghar.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "description": "Provides maternity-related financial assistance to eligible pregnant and lactating women, subject to scheme conditions.",
+    "category": "Women and Child Welfare",
+    "official_url": "https://pmmvy.wcd.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Janani Suraksha Yojana (JSY)",
+    "description": "A maternal-health programme intended to encourage institutional deliveries among eligible beneficiaries.",
+    "category": "Healthcare",
+    "official_url": "https://nhm.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+    "description": "A renewable life insurance scheme for eligible account holders, subject to enrollment and premium requirements.",
+    "category": "Social Security",
+    "official_url": "https://www.jansuraksha.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Suraksha Bima Yojana (PMSBY)",
+    "description": "An accident insurance scheme for eligible account holders, subject to enrollment and policy conditions.",
+    "category": "Social Security",
+    "official_url": "https://www.jansuraksha.gov.in/",
+    "rules": {}
+  },
+  {
+    "name": "Pradhan Mantri Shram Yogi Maan-dhan (PM-SYM)",
+    "description": "A contributory pension scheme for eligible unorganised-sector workers, subject to age and income requirements.",
+    "category": "Social Security",
+    "official_url": "https://maandhan.in/",
+    "rules": {}
+  },
+  {
+    "name": "National Social Assistance Programme (NSAP)",
+    "description": "An umbrella programme providing social assistance through different components for eligible vulnerable households.",
+    "category": "Social Security",
+    "official_url": "https://nsap.nic.in/",
+    "rules": {}
+  },
+  {
+    "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+    "description": "Provides pension assistance to eligible older persons under the National Social Assistance Programme.",
+    "category": "Social Security",
+    "official_url": "https://nsap.nic.in/",
+    "rules": {}
+  },
+  {
+    "name": "Indira Gandhi National Widow Pension Scheme (IGNWPS)",
+    "description": "Provides pension assistance to eligible widows under the National Social Assistance Programme.",
+    "category": "Social Security",
+    "official_url": "https://nsap.nic.in/",
+    "rules": {}
+  },
+  {
+    "name": "Indira Gandhi National Disability Pension Scheme (IGNDPS)",
+    "description": "Provides pension assistance to eligible persons with disabilities under the National Social Assistance Programme.",
+    "category": "Social Security",
+    "official_url": "https://nsap.nic.in/",
+    "rules": {}
+  }
+]
