@@ -16,9 +16,17 @@ class CitizenProfile(db.Model):
     occupation = db.Column(db.String(100))
     annual_income = db.Column(db.Float)
     interests = db.Column(db.Text, default='')
+    full_name = db.Column(db.String(120))
+    district = db.Column(db.String(120))
+    gender = db.Column(db.String(40))
+    education_level = db.Column(db.String(80))
+    employment_status = db.Column(db.String(80))
+    household_size = db.Column(db.Integer)
+    social_category = db.Column(db.String(60))
+    disability_status = db.Column(db.Boolean)
     user = db.relationship('User', back_populates='profile')
     def as_dict(self):
-        return {k:getattr(self,k) for k in ('age','state','occupation','annual_income','interests')}
+        return {k:getattr(self,k) for k in ('age','state','occupation','annual_income','interests','full_name','district','gender','education_level','employment_status','household_size','social_category','disability_status')}
 
 class Scheme(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -22,8 +22,9 @@ services:
       DATABASE_URL: mysql+pymysql://jansetu:${MYSQL_PASSWORD}@mysql:3306/jansetu
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:?Set JWT_SECRET_KEY}
       FRONTEND_ORIGIN: http://localhost:5173
-    ports: ["127.0.0.1:5000:5000"]
+    ports: ["127.0.0.1:5000:10000"]
     depends_on:
       mysql: {condition: service_healthy}
 volumes:
   mysql_data:
+

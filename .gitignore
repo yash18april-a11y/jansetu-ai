@@ -16,3 +16,8 @@ venv/
 *.zip
 scheme_link_report.csv
 scheme_review.csv
+
+# Local backups and exports
+phase1-original-backup/
+backend/jansetu_schemes_export.json
+phase1-local-backup.sql

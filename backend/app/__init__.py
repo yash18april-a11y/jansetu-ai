@@ -47,18 +47,51 @@ def create_app(test_config=None):
         if not u:return jsonify(error='User not found'),404
         if request.method=='GET':return jsonify(u.profile.as_dict())
         body=request.get_json(silent=True) or {}
-        allowed={'age','state','occupation','annual_income','interests'}
-        if any(k not in allowed for k in body):return jsonify(error='Unknown profile field'),400
+        allowed = {'age','state','occupation','annual_income','interests',
+                   'full_name','district','gender','education_level','employment_status',
+                   'household_size','social_category','disability_status'}
+        if not isinstance(body, dict) or any(k not in allowed for k in body):
+            return jsonify(error='Unknown profile field'),400
+        clean = {}
         try:
-            if 'age' in body and body['age'] is not None and not 0<=int(body['age'])<=120:raise ValueError()
-            if 'annual_income' in body and body['annual_income'] is not None and float(body['annual_income'])<0:raise ValueError()
-            for key,value in body.items():
-                if key in {'state','occupation','interests'} and value is not None and (not isinstance(value,str) or len(value)>500):raise ValueError()
-                if key=='age' and value is not None:value=int(value)
-                if key=='annual_income' and value is not None:value=float(value)
-                setattr(u.profile,key,value)
-        except (ValueError,TypeError):return jsonify(error='Invalid profile values'),400
-        db.session.commit();return jsonify(u.profile.as_dict())
+            for key, value in body.items():
+                if value == '': value = None
+                if key in {'age','household_size'} and value is not None:
+                    if isinstance(value, bool): raise ValueError()
+                    value = int(value)
+                    if key == 'age' and not 0 <= value <= 120: raise ValueError()
+                    if key == 'household_size' and not 1 <= value <= 50: raise ValueError()
+                elif key == 'annual_income' and value is not None:
+                    import math
+                    if isinstance(value, bool): raise ValueError()
+                    value = float(value)
+                    if not math.isfinite(value) or not 0 <= value <= 1_000_000_000: raise ValueError()
+                elif key == 'disability_status' and value is not None:
+                    if not isinstance(value, bool): raise ValueError()
+                elif value is not None:
+                    limit = 500 if key == 'interests' else 120
+                    if not isinstance(value, str) or len(value) > limit: raise ValueError()
+                    value = value.strip() or None
+                clean[key] = value
+        except (ValueError, TypeError, OverflowError):
+            return jsonify(error='Invalid profile values'),400
+        for key,value in clean.items(): setattr(u.profile,key,value)
+        db.session.commit()
+        return jsonify(u.profile.as_dict())
+
+    @app.get('/api/dashboard')
+    @jwt_required()
+    def dashboard():
+        u = db.session.get(User,int(get_jwt_identity()))
+        if not u or not u.profile: return jsonify(error='User not found'),404
+        profile_data = u.profile.as_dict()
+        core = ('age','state','district','occupation','annual_income','education_level','employment_status','interests')
+        complete = sum(profile_data.get(k) is not None and profile_data.get(k) != '' for k in core)
+        saved_count = db.session.query(SavedScheme).join(Scheme,SavedScheme.scheme_id==Scheme.id).filter(
+            SavedScheme.user_id==u.id,Scheme.active.is_(True)).count()
+        return jsonify(profile=profile_data,completion_percentage=round(complete/len(core)*100),
+                       missing_fields=[k for k in core if profile_data.get(k) is None or profile_data.get(k)==''],
+                       saved_count=saved_count,published_count=Scheme.query.filter_by(active=True).count())
 
     @app.get('/api/schemes')
     def schemes():return jsonify([s.as_dict() for s in Scheme.query.filter_by(active=True).order_by(Scheme.name).all()])
