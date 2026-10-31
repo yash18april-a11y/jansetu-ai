@@ -10,7 +10,10 @@ from .engine import evaluate, rank_schemes
 
 def create_app(test_config=None):
     app = Flask(__name__)
-    app.config.update(SQLALCHEMY_DATABASE_URI=os.getenv('DATABASE_URL','mysql+pymysql://jansetu:jansetu@localhost:3306/jansetu'), SQLALCHEMY_TRACK_MODIFICATIONS=False, JWT_SECRET_KEY=os.getenv('JWT_SECRET_KEY',''))
+    app.config.update(SQLALCHEMY_DATABASE_URI=os.getenv(
+    'DATABASE_URL',
+    'mysql+pymysql://jansetu:jansetu@localhost:3306/jansetu'
+).replace('postgres://', 'postgresql://', 1), SQLALCHEMY_TRACK_MODIFICATIONS=False, JWT_SECRET_KEY=os.getenv('JWT_SECRET_KEY',''))
     if test_config: app.config.update(test_config)
     if not app.config['JWT_SECRET_KEY']: raise RuntimeError('Set JWT_SECRET_KEY to a strong random secret')
     db.init_app(app); jwt.init_app(app)
